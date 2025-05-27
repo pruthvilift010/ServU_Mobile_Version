@@ -803,104 +803,65 @@ h2 {
   }
 
 }
-/* Base Styles — Retain existing design */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    background-color: inherit;
-    color: inherit;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Ensure images and videos are responsive */
-img, video {
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .main-container {
+    flex-wrap: wrap;
+  }
+  .menu-section, .self-pickup-section {
+    min-width: 100%;
     max-width: 100%;
-    height: auto;
+  }
 }
 
-/* Ensure input and buttons don't overflow */
-input, button {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* Responsive Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    overflow-x: auto;
-}
-
-/* Responsive Layout: Stack on small screens */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
-    /* Stack form inputs */
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .col {
-        width: 100% !important;
-    }
-
-    /* Navigation Menu: Stack vertically */
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav li {
-        margin: 5px 0;
-    }
-
-    /* Login/Logout buttons and title responsive */
-    .header-title, .login-section, .logout-section {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    /* Optional: Responsive past orders */
-    .past-orders {
-        overflow-x: auto;
-    }
-
-    /* Make buttons full width on small screens */
-    button {
-        width: 100%;
-    }
-
-    /* Prevent horizontal scroll */
-    body {
-        overflow-x: hidden;
-    }
+  #userInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .images {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .banner {
+    width: 100%;
+    height: auto;
+  }
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-item input {
+    width: 100%;
+  }
+  .main-container {
+    padding: 15px;
+  }
+  .health-benefits, .dish-highlight {
+    flex: 1 1 100%;
+  }
 }
 
-/* Optional: Adjust font sizes on very small screens */
 @media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    h1, h2, h3 {
-        font-size: 1.2em;
-    }
+  header {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+  h2, .menu-section h2, .self-pickup-section h2, .health-benefits h3, .dish-highlight h3 {
+    font-size: 1.3rem;
+  }
+  #logoutBtn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  #status {
+    font-size: 1.2rem;
+  }
+  .menu-item label {
+    font-size: 1rem;
+  }
+  .menu-item input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }
